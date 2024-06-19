@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 function Navbar() {
 
@@ -11,29 +12,29 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 About
-              </a>
+              </Link>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="/">Developers</a></li>
-                <li><a className="dropdown-item" href="/">organization</a></li>
+                <li><Link className="dropdown-item" to="/">Developers</Link></li>
+                <li><Link className="dropdown-item" to="/">organization</Link></li>
                 <li><hr className="dropdown-divider" /></li>
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">ADHD</a>
+              <Link className="nav-link" aria-current="page" to="/adhd">ADHD</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Autism</a>
+              <Link className="nav-link" to="/autism">Autism</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Dyslexia</a>
+              <Link className="nav-link" to="/dyslexia">Dyslexia</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Downsyndrome</a>
+              <Link className="nav-link" to="/downsyndrome">Downsyndrome</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Cerebral Palsy</a>
+              <Link className="nav-link" to="/Cerebral-palsy">Cerebral Palsy</Link>
             </li>
 
           </ul>
