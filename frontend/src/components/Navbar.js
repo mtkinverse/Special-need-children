@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom"
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg sticky-top">
+      <NavLink className='navbar-brand' to='/'>Bridge of Hope</NavLink>
       <div className="container-fluid" >
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -15,29 +16,26 @@ function Navbar() {
             </li>
             <li className="nav-item dropdown">
               <NavLink className="nav-link dropdown-toggle" to="/about" role="button" data-bs-toggle="dropdown" aria-expanded="false" activeClassName="active">
-                About
+                Project Spectrum
               </NavLink>
               <ul className="dropdown-menu">
-                <li><NavLink className="dropdown-item" to="/developers">Developers</NavLink></li>
-                <li><NavLink className="dropdown-item" to="/organizations">Organization</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/autism">Autism</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/adhd">ADHD</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/dyslexia">Dyslexia</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/downsyndrome">Downsyndrome</NavLink></li>
                 <li><hr className="dropdown-divider" /></li>
               </ul>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/adhd" activeClassName="active">ADHD</NavLink>
+              <NavLink className="nav-link" to="/projects" activeClassName="active">Our Projects</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/autism" activeClassName="active">Autism</NavLink>
+              <NavLink className="nav-link" to="/people" activeClassName="active">People</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/dyslexia" activeClassName="active">Dyslexia</NavLink>
+              <NavLink className="nav-link" to="/contactUs" activeClassName="active">Contact Us</NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/downsyndrome" activeClassName="active">Downsyndrome</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/Cerebral-palsy">Cerebral Palsy</NavLink>
-            </li>
+
           </ul>
         </div>
       </div>
