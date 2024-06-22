@@ -32,7 +32,36 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.container-fluid {
+  max-height: 100%;
+}
+
+.navbar {
+  background-color: rgb(250, 235, 215);
+}
+
+.nav-link.active {
+  background-color: #61dafb;
+  border-bottom: #282c34 solid 1px;
+}
+
+.nav-item:hover {
+  background-color: rgb(247, 213, 169);
+  border-bottom: #282c34 solid 1px;
+  transition: all 0.5s ease-in-out;
+}
+
+.dropdown-item {
+  color: #878585;
+}
+
+.dropdown-item:hover {
+  background-color: #ccc;
+  color: black;
 }
