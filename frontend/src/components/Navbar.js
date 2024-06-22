@@ -14,12 +14,12 @@ function Navbar() {
               <NavLink className="nav-link" aria-current="page" to="/" activeClassName="active">Home</NavLink>
             </li>
             <li className="nav-item dropdown">
-              <NavLink className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false" activeClassName="active">
+              <NavLink className="nav-link dropdown-toggle" to="/about" role="button" data-bs-toggle="dropdown" aria-expanded="false" activeClassName="active">
                 About
               </NavLink>
               <ul className="dropdown-menu">
-                <li><NavLink className="dropdown-item" to="/">Developers</NavLink></li>
-                <li><NavLink className="dropdown-item" to="/">Organization</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/developers">Developers</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/organizations">Organization</NavLink></li>
                 <li><hr className="dropdown-divider" /></li>
               </ul>
             </li>
