@@ -42,17 +42,19 @@
   max-height: 100%;
 }
 
-.navbar {
-  background-color: rgb(250, 235, 215);
+.navbar{
+  background-color: rgba(216, 213, 209, 0.418);
 }
 
 .nav-link.active {
-  background-color: #61dafb;
+  color: whitesmoke;
   border-bottom: #282c34 solid 1px;
+  font-weight: bold;
 }
 
 .nav-item:hover {
-  background-color: rgb(247, 213, 169);
+  background-color: rgb(180, 177, 173);
+  color: whitesmoke;
   border-bottom: #282c34 solid 1px;
   transition: all 0.5s ease-in-out;
 }
@@ -64,4 +66,16 @@
 .dropdown-item:hover {
   background-color: #ccc;
   color: black;
+}
+
+.introducer{
+  z-index: 2;
+  position: absolute;
+  transform: translate(10%, 12rem);
+  color:white;
+  max-width:50rem;
+}
+.carouselPic{
+  height: 600px;
+  filter:blur(1px) brightness(0.8) contrast(1.2);
 }

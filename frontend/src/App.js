@@ -1,11 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Adhd from "./components/Adhd";
-import Autism from "./components/Autism";
-import CerebralPalsy from "./components/CerebralPalsy";
-import Downsyndrome from "./components/Downsyndrome";
-import Dyslexia from "./components/Dyslexia";
-import Home from "./components/Home"
+import { Navbar,Adhd,Autism,Downsyndrome,Dyslexia,Home,People,ContactUs,Board } from './components/exporter';
 import './App.css'
 
 function App() {
@@ -17,9 +11,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/adhd" element={<Adhd />} />
           <Route path="/autism" element={<Autism />} />
-          <Route path="/cerebral-palsy" element={<CerebralPalsy />} />
           <Route path="/downsyndrome" element={<Downsyndrome />} />
           <Route path="/dyslexia" element={<Dyslexia />} />
+          <Route path="/people" element={<People />}>
+            <Route path='experts' index element={<Board id='experts'/>}/>
+            <Route path='aiTeam' element={<Board id='aiTeam'/>}/>
+            <Route path='devTeam' element={<Board id='devTeam'/>}/>
+          </Route>
+          <Route path="/contactUs" element={<ContactUs />} />
         </Routes>
       </BrowserRouter>
 
