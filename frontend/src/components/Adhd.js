@@ -1,9 +1,10 @@
 import React from 'react'
+import DemoVideo from './Video'
 
 function Adhd() {
   return (
     <div>
-      This is page for Adhd students
+      <DemoVideo />
     </div>
   )
 }

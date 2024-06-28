@@ -1,9 +1,10 @@
 import React from 'react'
+import DemoVideo from './Video'
 
 function Autism() {
   return (
     <div>
-      Page for autism
+      <DemoVideo />
     </div>
   )
 }
