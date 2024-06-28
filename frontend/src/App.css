@@ -43,11 +43,16 @@
 }
 
 .navbar{
-  background-color: rgba(216, 213, 209, 0.418);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
+.navbar:hover{
+  background-color: rgba(216,213,209,0.9);
+  transition: all 0.9s ease-in-out;
+}
+
+
 .nav-link.active {
-  color: whitesmoke;
   border-bottom: #282c34 solid 1px;
   font-weight: bold;
 }
