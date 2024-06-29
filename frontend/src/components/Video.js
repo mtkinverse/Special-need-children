@@ -1,7 +1,6 @@
 import React from 'react';
-// import './DemoVideo.css';
 
-function DemoVideo() {
+function DemoVideo({ video }) {
     return (
         <div className="container text-center my-5">
             <p>
@@ -21,8 +20,8 @@ function DemoVideo() {
                         title="Demo Video"
                     ></iframe>
                 </div>
-                <h2 className="text-center text-secondary">Video Title</h2>
-                <p className="text-center text-dark">This is a website representing a software tool for special need children. This tool uses AI and other advancements to help such students learn at a faster rate
+                <h2 className="text-center text-secondary">{video.title}</h2>
+                <p className="text-center text-dark">{video.description}
                 </p>
             </div>
         </div >
