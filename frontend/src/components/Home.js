@@ -2,7 +2,7 @@ import React from 'react'
 
 function Home() {
     return (
-        <div style={{ height: "600px" }} >
+        <div style={{ height: "600px",marginTop:"-5.5%" }} >
 
             <div id="divForCarousel" className="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
                 <div className='introducer'>

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg sticky-top">
-      <NavLink className='navbar-brand' to='/'>Bridge of Hope</NavLink>
+      <NavLink className='navbar-brand mx-2' to='/'>Bridge of Hope</NavLink>
       <div className="container-fluid" >
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
