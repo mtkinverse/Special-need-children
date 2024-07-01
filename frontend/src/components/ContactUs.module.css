@@ -1,3 +1,9 @@
+.link {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
 .responsiveMap {
     overflow: hidden;
     height: 0;
@@ -16,8 +22,7 @@
 
 .contactContainer {
     display: flex;
-    gap: 20px;
-    flex-direction: column;
+    gap: 50px;
     justify-content: center;
     align-items: center;
     margin-top: 10px;

@@ -12,19 +12,23 @@ function ContactUs() {
       </div>
       <div>
         <div className={styles.contactContainer}>
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             <TiLocation style={{ fontSize: "40px" }} />
-            <div></div>
-            <Link to={"https://khi.nu.edu.pk"}>FAST National University, Karachi</Link>
+            <Link className={styles.link} to={"https://khi.nu.edu.pk"}>
+              FAST National University, Karachi
+            </Link>
+
           </div>
-          <div style={{ display: "flex" }}>
-            <IoMdMail style={{ fontSize: "40px" }} />
-            <div></div>
-            <Link to={"mailto:anam.qureshi@nu.edu.pk"}>anam.qureshi@nu.edu.pk</Link>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <IoMdMail style={{ fontSize: "40px", marginRight: "5px" }} />
+            <Link className={styles.link} to={"mailto:anam.qureshi@nu.edu.pk"}>
+              anam.qureshi@nu.edu.pk
+            </Link>
+
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   )
 }
 
