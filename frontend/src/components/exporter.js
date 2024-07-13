@@ -7,7 +7,8 @@ import Home from "./Home"
 import People from "./People";
 import ContactUs from "./ContactUs";
 import Board from "./Board";
+import Footer from './Footer'
 
-export{
-    Navbar,Adhd,Autism,Downsyndrome,Dyslexia,Home,People,ContactUs,Board
+export {
+    Navbar, Adhd, Autism, Downsyndrome, Dyslexia, Home, People, ContactUs, Board, Footer
 }
