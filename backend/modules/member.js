@@ -19,11 +19,11 @@ const memSchema = new mongoose.Schema({
         type : String,
         required : false
     },
-    category : {
-        type : String,
-        required : false
-    },
     team : {
+        type : String,
+        required : true
+    },
+    title : {
         type : String,
         required : true
     }

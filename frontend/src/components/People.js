@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+const host = 'http://localhost:3000';
+
 
 const renderInfo = (data) => {
   return (
@@ -14,20 +16,12 @@ const renderInfo = (data) => {
             className="rounded-3xl w-[300px] py-4 h-full bg-themeLGreen flex flex-col p-2 justify-evenly items-center"
           >
             <div className="flex w-full h-full justify-evenly items-center">
-              {item.img ? (
-                <img
-                  src={item.img}
-                  className="rounded-full w-20 h-20 bg-themeWhite"
-                />
-              ) : (
-                <div className="rounded-full w-20 h-20 bg-themeWhite"></div>
-              )}
+              <img src={item.image ? host + item.image : process.env.PUBLIC_URL + '/pic.jpeg'} className="rounded-full w-20 h-20 bg-themeWhite" alt='unavailable' />
               <div className="text-center flex-col flex justify-center">
                 <h4 className="text-xl font-medium">{item.name}</h4>
                 <h4 className="font-light">{item.title}</h4>
               </div>
             </div>
-            {/* <p className="text-center">{item.description}</p> */}
           </div>
         ))}
       </div>
@@ -36,80 +30,56 @@ const renderInfo = (data) => {
 };
 
 const People = () => {
-  const expertData = [
+  const [selectedInfo, setSelectedInfo] = React.useState("Experts");
+  const [data,setData] = useState([]);
+  let expertData = [
     {
       heading: "Experts Panel",
       desc: "Comprising specialists in education and child development, our Experts Panel brings invaluable insights and guidance to tailor our tools to meet the unique needs of each child.",
-    },
-    {
-      name: "Dr. Anum Qureshi",
-      title: "Mentor",
-      img: "",
-      description: "Dr. Anum Qureshi is a mentor at The Bridge of Hopes.",
-    },
-    {
-      name: "Sir John Doe",
-      title: "Lead",
-      img: "",
-      description: "lorem ipsum dolor emet.",
-    },
-    {
-      name: "Miss Jane Doe",
-      title: "Lead",
-      img: "",
-      description: "lorem ipsum dolor emet.",
-    },
+    }
   ];
-  const aiData = [
+  let aiData = [
     {
       heading: "AI Team",
       desc: "Innovators at heart, our AI team harnesses the power of artificial intelligence to develop cutting-edge solutions that enhance learning experiences for children with dyslexia, ADHD, autism, and cerebral palsy.",
-    },
-    {
-      name: "Robert Downey",
-      title: "AI Lead",
-      img: "",
-      description: "",
-    },
-    {
-      name: "Charles Dawson",
-      title: "AI Member",
-      img: "",
-      description: "",
-    },
-    {
-      name: "Frederick Williams",
-      title: "AI Member",
-      img: "",
-      description: "",
-    },
+    }
   ];
-  const devData = [
+  let devData = [
     {
       heading: "Development Team",
       desc: "The backbone of our operations, our Development Team ensures that our tools are robust, user-friendly, and accessible, bringing our vision to life with technical excellence.",
-    },
-    {
-      name: "William Smith",
-      title: "Dev Lead",
-      img: "",
-      description: "",
-    },
-    {
-      name: "Devone Smith",
-      title: "Dev Member",
-      img: "",
-      description: "",
-    },
-    {
-      name: "Lisa Smith",
-      title: "Dev Member",
-      img: "",
-      description: "",
-    },
+    }
   ];
+  
+  useEffect(()=>{
 
-  const [selectedInfo, setSelectedInfo] = React.useState("Experts");
+    let endPoint = '';
+    switch(selectedInfo){
+      case 'Experts': endPoint = 'experts'; break;
+      case 'AI': endPoint = 'aiTeam'; break;
+      default: endPoint = 'devTeam';
+    }
+    
+    async function fetchMembers(){
+
+      const mem = await fetch(`${host}/api/members/team/${endPoint}`);
+      const res = await mem.json();
+      
+      if(res.status){
+        switch(selectedInfo){
+          case 'Experts': setData(expertData.concat(res.members)); break;
+          case 'AI': setData(aiData.concat(res.members)); break;
+          default: setData(devData.concat(res.members)); break; 
+        }
+        console.log("fetching done", res);
+      }
+
+    }
+    
+    fetchMembers();
+//eslint-disable-next-line
+  },[selectedInfo]);
+
   return (
     <div className="h-full flex flex-col gap-10 items-center pt-44 lg:pt-32">
       <h1 className="text-center text-5xl font-bold text-themeOrange">
@@ -154,13 +124,7 @@ const People = () => {
           Development Team
         </div>
       </div>
-      {renderInfo(
-        selectedInfo === "Experts"
-          ? expertData
-          : selectedInfo === "AI"
-          ? aiData
-          : devData
-      )}
+      {data.length > 0 && renderInfo(data)}
     </div>
   );
 };
